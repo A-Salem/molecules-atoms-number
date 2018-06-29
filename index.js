@@ -37,7 +37,7 @@ for(let i=0; i<text.length; i++){
   let endVal = Number(text[i+1]);
   let oneAfter = Number(text[i+2]);
   endVal = _.isNaN(endVal)? 1: endVal;
-  if(oneAfter){
+  if(!_.isNaN(Number(text[i+1])) && oneAfter){
     endVal = _.isNaN(oneAfter)? endVal: Number(String(endVal) + String(oneAfter));
   }
   if(char == ']'){

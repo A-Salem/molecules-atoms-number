@@ -86,6 +86,9 @@ for(let i=0; i<text.length; i++){
       }
     } else if(!_.isNaN(Number(nextChar))){
       value = Number(nextChar);
+      if(afterNextChar && !_.contains(['[', ']'], afterNextChar) && !_.isNaN(Number(afterNextChar))){
+        value = Number(nextChar + afterNextChar);
+      }
     }
 
     _.each(finalStartEnd, (multi) => {
